@@ -116,8 +116,8 @@ nav > a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 550px;
     padding: 0 2rem;
+    margin-bottom: 2rem;
 }
 
 .about-title {
@@ -304,10 +304,161 @@ form button:hover {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
+    /* Responsive styles */
+@media (max-width: 768px) {
     .about-main {
-        display: flex;
-        width: 100%;
-        height: 550px;
-        flex-direction: column;
+        grid-template-columns: 1fr; /* Satu kolom untuk mobile */
+        padding: 1rem; /* Padding diperkecil */
     }
+
+    .skills {
+        flex-wrap: wrap; /* Skill items bisa wrap ke baris baru */
+        gap: 0.5rem; /* Jarak antar skill items */
+    }
+
+    .skill-content {
+        margin-right: 0; /* Hapus margin kanan */
+        margin-bottom: 0.5rem; /* Jarak bawah antar skill items */
+    }
+
+    #message-us {
+        margin-top: 2rem; /* Tambahkan margin atas */
+    }
+
+    .form-content {
+        grid-template-columns: 1fr; /* Satu kolom untuk mobile */
+        padding: 1rem; /* Padding diperkecil */
+    }
+
+    form button {
+        width: 100%; /* Tombol memenuhi lebar layar */
+    }
+}
+
+    /* messages-us */
+.form-content {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 1rem; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem; 
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.875rem; 
+}
+
+form input[type="text"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.5rem; 
+    margin-bottom: 0.75rem; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.875rem; 
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px; 
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.5rem 1rem; 
+    border: none;
+    border-radius: 5px;
+    font-size: 0.875rem; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+#sender-name,
+#sender-date,
+#sender-gender,
+#sender-message {
+    font-weight: bold;
+    color: #007BFF;
+    font-size: 0.875rem; 
+}
+
+.form-content > div {
+    background-color: white;
+    padding: 1rem; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.form-content > div.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .form-content {
+        grid-template-columns: 1fr; 
+        padding: 0.5rem; 
+    }
+
+    form label {
+        font-size: 0.875rem; 
+    }
+
+    form input[type="text"],
+    form input[type="date"],
+    form select,
+    form textarea {
+        font-size: 0.875rem; 
+        padding: 0.5rem; 
+    }
+
+    form textarea {
+        min-height: 80px; 
+    }
+
+    form button {
+        font-size: 0.875rem; 
+        padding: 0.5rem 1rem; 
+    }
+
+    #sender-name,
+    #sender-date,
+    #sender-gender,
+    #sender-message {
+        font-size: 0.875rem; 
+    }
+
+    .form-content > div {
+        padding: 1rem; 
+    }
+}
 }
